@@ -26,6 +26,7 @@ p {
 img {
   display: block;
 }
+
 a {
   text-decoration: none;
 }
@@ -42,6 +43,7 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 /* common */
 
 .container {
@@ -54,6 +56,8 @@ a {
 
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -99,6 +103,24 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link.current {
+  position: relative;
+}
+
+.nav-link.current::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
 }
 
 .contacts {
@@ -119,16 +141,50 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
 .nav-link:focus,
 .contacts-link:hover,
-.contacts-link:focus {
+.contacts-link:focus,
+.nav-link.current {
   color: #404bbf;
 }
 
 /* hero */
+
+.hero {
+  background-color: #2e2f42;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office\ 1-min.jpg);
+  color: #fff;
+  padding-top: 188px;
+  padding-bottom: 188px;
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-container {
+}
+
+.hero-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-align: center;
+  max-width: 496px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
 
 .hero-button {
   background: #4d5ae5;
@@ -153,36 +209,13 @@ a {
   background-color: #404bbf;
 }
 
-.hero {
-  background-color: #2e2f42;
-  color: #fff;
-  padding-top: 188px;
-  padding-bottom: 188px;
-}
-
-.hero-title {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
-  letter-spacing: 0.02em;
-  color: #fff;
-  text-align: center;
-  max-width: 496px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 48px;
-}
-
-.hero-container {
-}
-
-/* Features */
+/* Features ( Section 1) */
 
 .features {
   padding-top: 120px;
   padding-bottom: 120px;
 }
+
 .features-list {
   display: flex;
   align-items: center;
@@ -192,6 +225,7 @@ a {
 .features-item {
   width: calc((100% - 72px) / 4);
 }
+
 .features-subtitle {
   font-weight: 500;
   font-size: 20px;
@@ -200,6 +234,7 @@ a {
   color: #2e2f42;
   margin-bottom: 8px;
 }
+
 .features-item-text {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -209,13 +244,25 @@ a {
   color: #434455;
 }
 
-/* caption OurTeam */
-
-.subject-list {
+.icon-circle-features {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background: #f4f4fd;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
-  gap: 24px;
+  justify-content: center;
 }
+
+.user-icon-features {
+  width: 64px;
+  height: 64px;
+}
+
+/*  OurTeam ( Section 2) */
+
 .caption {
   background-color: #f4f4fd;
   padding: 120px 0;
@@ -231,11 +278,20 @@ a {
   margin-bottom: 72px;
 }
 
+.subject-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .subject-users {
   background-color: #ffffff;
   border-radius: 0px 0px 4px 4px;
   width: calc((100% - 72px) / 4);
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
+
 .user-img {
 }
 
@@ -262,22 +318,34 @@ a {
   color: #434455;
 }
 
-/* heading-main Our Portfolio */
+.user-icon {
+  width: 16px;
+  height: 16px;
+  fill: #f4f4fd;
+  background-color: #00;
+}
+.social-icons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  Our Portfolio ( Section 3)*/
 
 .heading-main {
   padding-top: 120px;
   padding-bottom: 120px;
-}
-
-.heading-list {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  row-gap: 48px;
-}
-.heading-items {
-  width: calc((100% - 48px) / 3);
 }
 
 .heading {
@@ -291,6 +359,33 @@ a {
   margin-bottom: 72px;
 }
 
+.heading-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  row-gap: 48px;
+}
+
+.heading-items {
+  width: calc((100% - 48px) / 3);
+}
+
+.heading-items:hover .app-cover-text {
+  transform: translate(0);
+}
+
+.app-cover {
+  position: relative;
+  overflow: hidden;
+}
+
+.inf-container {
+  padding: 32px 16px;
+  border: 1px solid #e7e9fc;
+  border-top: none;
+}
+
 .headline {
   font-weight: 500;
   font-size: 20px;
@@ -299,6 +394,7 @@ a {
   color: #2e2f42;
   margin-bottom: 8px;
 }
+
 .headline-lead {
   font-size: 16px;
   line-height: 1.5;
@@ -306,23 +402,34 @@ a {
   color: #434455;
 }
 
-.inf-container {
-  padding: 32px 16px;
-  border: 1px solid #e7e9fc;
-  border-top: none;
+.app-cover-text {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: #4d5ae5;
+  color: #f4f4fd;
+  padding: 40px 32px;
+  transform: translateY(100%);
+  transition: transform 250ms ease;
 }
+
 /* footer */
 
 .page-footer {
   background-color: #2e2f42;
   padding: 100px 0;
 }
-.footer-text {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #f4f4fd;
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-logo .logo-part {
@@ -334,13 +441,50 @@ a {
   margin-bottom: 16px;
 }
 
-:root {
-  --text-color-footer: #f4f4fd;
-}
-
 .footer-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
   color: var(--text-color-footer);
   max-width: 264px;
   line-height: 1.5;
   margin-top: 16px;
+}
+
+:root {
+  --text-color-footer: #f4f4fd;
+}
+
+.social {
+  width: 208px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+.social-head {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+.social-icons-list {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-footer .user-icon {
+  width: 24px;
+  height: 24px;
 }
