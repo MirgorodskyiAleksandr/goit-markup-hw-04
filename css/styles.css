@@ -343,7 +343,7 @@ a {
   justify-content: center;
 }
 
-.icon-adress {
+.icon-address {
   width: 100%;
   height: 100%;
   background-color: var(--text-color-adress);
@@ -353,13 +353,13 @@ a {
   justify-content: center;
 }
 
-.icon-adress:hover,
-.icon-adress:focus {
+.icon-address:hover,
+.icon-address:focus {
   background-color: #404bbf;
 }
 
 :root {
-  --text-color-adress: #4d5ae5;
+  --text-color-address: #4d5ae5;
 }
 
 /*  Our Portfolio ( Section 3)*/
@@ -522,8 +522,8 @@ a {
   --text-color-icons-final: #f4f4fd;
 }
 
-.page-footer .icon-adress:hover,
-.page-footer .icon-adress:focus {
+.page-footer .icon-address:hover,
+.page-footer .icon-address:focus {
   background-color: #31d0aa;
 }
 
@@ -533,7 +533,7 @@ a {
   height: 40px;
 }
 
-.page-footer .icon-adress {
+.page-footer .icon-address {
   width: 100%;
   height: 100%;
   background-color: var(--text-color-icons);
